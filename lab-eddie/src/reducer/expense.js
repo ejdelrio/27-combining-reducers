@@ -21,13 +21,13 @@ export default (state=initialState, action) => {
         return expense.id === payload.id ? payload : expense;
       })
       return {...state, [categoryID]: [...modifiedCategory]};
-    case 'DELETE_EXPENSE':
+    case 'EXPENSE_DELETE':
       var {categoryID} = payload;
       var categoryExpenses = state[categoryID];
       var modifiedCategory = categoryExpenses.filter(expense => {
         return expense.id !== payload.id;
       })
-      return {...stat, [categoryID]: [modifiedCategory]};
+      return {...state, [categoryID]: [...modifiedCategory]};
     default:
       return state;
   }
