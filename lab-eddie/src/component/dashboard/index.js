@@ -40,7 +40,7 @@ class Dashboard extends React.Component {
               <ul>
                 {expense[cat.id].map(exp => {
                   return (
-                    <li key={cat.id}>
+                    <li key={exp.id}>
                       <CategoryBody
                         buttonText={'Delete Expense'}
                         category={exp}
