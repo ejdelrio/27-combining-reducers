@@ -9,20 +9,20 @@ export default (state=initialState, action) => {
     case 'CATEGORY_DELETE':
       return {...state, [payload.id]: undefined};
     case 'EXPENSE_CREATE':
-      let {categoryID} = payload;
+      var {categoryID} = payload;
       let categoryExpenses = state[categoryID];
       return {...state, [categoryID]: [...categoryCards, payload]};
     case 'EXPENSE_UPDATE':
-      let {categoryID} = payload;
-      let categoryExpenses = state[categoryID];
-      let modifiedCategory = categoryExpenses.map(expense => {
+      var {categoryID} = payload;
+      var categoryExpenses = state[categoryID];
+      var modifiedCategory = categoryExpenses.map(expense => {
         return expense.id === payload.id ? payload : expense;
       })
       return {...state, [categoryID]: [...modifiedCategory]};
     case 'DELETE_EXPENSE':
-      let {categoryID} = payload;
-      let categoryExpenses = state[categoryID];
-      let modifiedCategory = categoryExpenses.filter(expense => {
+      var {categoryID} = payload;
+      var categoryExpenses = state[categoryID];
+      var modifiedCategory = categoryExpenses.filter(expense => {
         return expense.id !== payload.id;
       })
       return {...stat, [categoryID]: [modifiedCategory]};

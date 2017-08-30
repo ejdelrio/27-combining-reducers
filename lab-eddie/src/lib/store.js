@@ -1,4 +1,4 @@
 import {createStore} from 'redux';
-import catReducer from '../reducer/category.js';
+import reducer from '../reducer/index.js';
 
-export default () => createStore(catReducer);
+export default () => createStore(reducer);
