@@ -22,14 +22,8 @@ class Dashboard extends React.Component {
             return (
               <li key={cat.id}>
                 <CategoryBody
-                  removeCat={this.props.categoryDelete}
                   buttonText='Remove'
                   category={cat}
-                />
-                <CategoryForm
-                  category={cat}
-                  onComplete={this.props.categoryUpdate}
-                  buttonText='Update'
                 />
               </li>
             );
@@ -49,8 +43,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, getState) => {
   return{
     categoryCreate: (category) => dispatch(categoryCreate(category)),
-    categoryUpdate: (category) => dispatch(categoryUpdate(category)),
-    categoryDelete: (category) => dispatch(categoryDelete(category))
   }
 }
 

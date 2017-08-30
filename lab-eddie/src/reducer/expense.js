@@ -1,3 +1,5 @@
+'use strict'
+
 let initialState = {};
 
 export default (state=initialState, action) => {
@@ -11,7 +13,7 @@ export default (state=initialState, action) => {
     case 'EXPENSE_CREATE':
       var {categoryID} = payload;
       let categoryExpenses = state[categoryID];
-      return {...state, [categoryID]: [...categoryCards, payload]};
+      return {...state, [categoryID]: [...categoryExpenses, payload]};
     case 'EXPENSE_UPDATE':
       var {categoryID} = payload;
       var categoryExpenses = state[categoryID];
