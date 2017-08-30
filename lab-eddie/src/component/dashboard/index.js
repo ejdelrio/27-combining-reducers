@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import CategoryForm from '../cat-form';
 import CategoryBody from '../category-body';
+import Category from '../category'
 import {
   categoryCreate,
   categoryUpdate,
@@ -14,48 +15,26 @@ import {
 
 class Dashboard extends React.Component {
   render() {
-    let expense = this.props.expense;
     return (
       <main className='dashboard'>
         <h1>{'Eddie\'s Kick Ass Dashboard :D'}</h1>
-        <CategoryForm
-          onComplete={this.props.categoryCreate}
-          buttonText='Add Category'
-        />
-        <ul>
-          {this.props.categories.map(cat => {
-            return (
-            <li key={cat.id}>
-              <CategoryBody
-                buttonText='Remove'
-                category={cat}
-                onComplete={this.props.categoryDelete}
-                secondForm={this.props.categoryUpdate}
-              />
-              <CategoryForm
-                categoryID={cat.id}
-                onComplete={this.props.expenseCreate}
-                buttonText='Add Expense'
-              />
-              <ul>
-                {expense[cat.id].map(exp => {
-                  return (
-                    <li key={exp.id}>
-                      <CategoryBody
-                        buttonText={'Delete Expense'}
-                        category={exp}
-                        categoryID={cat.id}
-                        onComplete={this.props.expenseDelete}
-                        secondForm={this.props.expenseUpdate}
-                      />
-                    </li>
-                  )
-                })}
-              </ul>
-            </li>
-            );
-          })}
-        </ul>
+        <Category
+          formComplete={this.props.categoryCreate}
+          formText='Add Category'
+          bodyText='Delete Category'
+          source={this.props.categories}
+          childSource={this.props.expense}
+          bodyComplete={this.props.categoryDelete}
+          secondForm={this.props.categoryUpdate}
+        >
+          <Category
+            formComplete={this.props.expenseCreate}
+            formText='Add Expense'
+            bodyText='Delete'
+            bodyComplete={this.props.expenseDelete}
+            secondForm={this.props.expenseUpdate}
+          />
+        </Category>
       </main>
     )
   }

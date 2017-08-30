@@ -21,9 +21,9 @@ class CategoryForm extends React.Component {
     e.preventDefault();
     let tempCat = Object.assign({}, this.state);
     tempCat.budget = parseInt(tempCat.budget);
-
     if(this.props.category) tempCat.id = this.props.category.id;
     if(this.props.categoryID) tempCat.categoryID = this.props.categoryID;
+
     this.props.onComplete(tempCat);
   }
 
