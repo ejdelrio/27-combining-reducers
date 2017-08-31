@@ -3,25 +3,23 @@
 import uuid from 'uuid/v1';
 
 export const expenseCreate = (cat) => {
-  cat.id = uuid();
-  cat.published = new Date();
   return {
     type: 'EXPENSE_CREATE',
-    payload: cat
+    payload: {...cat, id: uuid(), published: new Date()}
   };
 };
 
 export const expenseUpdate = (cat) => {
   return {
     type: 'EXPENSE_UPDATE',
-    payload: cat
+    payload: {...cat}
   };
 };
 
 export const expenseDelete = (cat) => {
   return {
     type: 'EXPENSE_DELETE',
-    payload: cat
+    payload: {...cat}
   };
 };
 
