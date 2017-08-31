@@ -37,8 +37,7 @@ class Category extends React.Component {
                   onComplete={this.props.bodyComplete}
                   secondForm={this.props.secondForm}
                 />
-                {!childSource ? null :
-                  childJSXDuplicate(childSource[item.id], item.id)}
+                {!childSource ? null : childJSXDuplicate(childSource[item.id], item.id)}
               </li>
             )
           })}
