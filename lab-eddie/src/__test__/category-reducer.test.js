@@ -17,28 +17,28 @@ describe('Category Reducer Test', () => {
     let testResult = categoryReducer([], {type: null});
     expect(testResult.length).toEqual(0);
     expect(testResult).toEqual([]);
-  })
+  });
 
   test('Should return state if given invalid type', () => {
     let testResult = categoryReducer(state, {type: null});
     expect(testResult.length).toEqual(2);
     expect(testResult[0]).toBe(state[0]);
-  })
+  });
   test('Should return a state with the category removed', () => {
     let target = {type: 'CATEGORY_DELETE', payload: state[1]}
     let testResult = categoryReducer(state, target);
     expect(testResult.length).toEqual(1);
     expect(testResult[0]).toBe(state[0]);
     expect(testResult[1]).toBe(undefined);
-  })
+  });
   test('Should return a state with a new category added', () => {
     let newCategory = {title: 'milk', budget: 3, id: 123}
     let target = {type: 'CATEGORY_CREATE', payload: newCategory}
     let testResult = categoryReducer(state, target);
-    expect(testResult.length).toEqual(2);
-    expect(testResult[0]).toBe(state[0]);
-    expect(testResult[1]).toEqual(newCategory);
-  })
+    expect(testResult.length).toEqual(3);
+    expect(testResult[0]).toEqual(state[0]);
+    expect(testResult[2]).toEqual(newCategory);
+  });
   test('Should return a state with a modified target', () => {
     let modCategory = state[1]
     modCategory.title = 'cake'
@@ -47,12 +47,12 @@ describe('Category Reducer Test', () => {
     expect(testResult.length).toEqual(2);
     expect(testResult[0]).toBe(state[0]);
     expect(testResult[1]).toEqual(modCategory);
-  })
+  });
   test('Should return the initial state', () => {
     let target = {type: 'CATEGORY_RESET', payload: state[0]}
     let testResult = categoryReducer(state, target);
-    expect(testResult.length).toEqual(state.length);
-    expect(testResult[0]).toBe(state[0]);
-    expect(testResult[1]).toEqual(state[1]);
-  })
-})
+    expect(testResult.length).toEqual(0);
+    expect(testResult[0]).toEqual(undefined);
+    expect(testResult[1]).toEqual(undefined);
+  });
+});

@@ -1,0 +1,44 @@
+@import '../lib/vars';
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+body {
+  font-family: $font-primary;
+  color: $secondary;
+}
+
+button {
+  border: none;
+  color: white;
+  background-color: black;
+  padding: $gutter-sm/2 $gutter-lg/2;
+  border-radius: $border-radius;
+  float: left;
+  margin-left: 25%;
+  cursor: pointer;
+  font-size: 2vw;
+  transition: $trans-prim;
+
+  &:hover {
+    background: $btn-primary;
+  }
+}
+
+input[type="text"], input[type="number"] {
+  box-sizing: border-box;
+  padding: $gutter-sm/2;
+  width: 50%;
+  float: left;
+  margin-left: 25%;
+  font-size: 1.5vw;
+  border-radius: $border-radius;
+  transition: $trans-prim;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+}

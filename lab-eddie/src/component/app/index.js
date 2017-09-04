@@ -3,6 +3,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import createStore from '../../lib/store.js';
 import Dashboard from '../dashboard';
+import '../../style/main.scss'
 
 let store = createStore();
 

@@ -11,7 +11,7 @@ describe('Category Action Test', () => {
     expect(action.payload.budget).toEqual(30);
     expect(action.payload.id).toBeTruthy();
     expect(action.payload.published).toBeTruthy();
-  })
+  });
 
   test('categoryUpdate returns a CATEGORY_UPDATE action', () => {
     let example = categoryCreate({title: 'snot crust', budget: 30}).payload;
@@ -21,7 +21,7 @@ describe('Category Action Test', () => {
     expect(action.payload.budget).toEqual(example.budget);
     expect(action.payload.id).toEqual(example.id);
     expect(action.payload.published).toEqual(example.published);
-  })
+  });
   test('categoryUpdate returns a CATEGORY_DELETE action', () => {
     let example = categoryCreate({title: 'snot crust', budget: 30}).payload;
     let action = categoryDelete(example);
@@ -30,5 +30,5 @@ describe('Category Action Test', () => {
     expect(action.payload.budget).toEqual(example.budget);
     expect(action.payload.id).toEqual(example.id);
     expect(action.payload.published).toEqual(example.published);
-  })
-})
+  });
+});
