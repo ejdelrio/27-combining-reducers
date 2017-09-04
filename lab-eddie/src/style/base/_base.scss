@@ -27,19 +27,21 @@ button {
   }
 }
 
-input[type="text"], input[type="number"] {
-  box-sizing: border-box;
-  padding: $gutter-sm/2;
-  width: 50%;
-  float: left;
-  margin-left: 25%;
-  margin-top: $gutter-sm;
-  font-size: 1.5vw;
-  border-radius: $border-radius;
-  transition: $trans-prim;
+main>span>form {
+  input[type=text], input[type=number] {
+    box-sizing: border-box;
+    padding: $gutter-sm/2;
+    width: 50%;
+    float: left;
+    margin-left: 25%;
+    margin-top: $gutter-sm;
+    font-size: 1.5vw;
+    border-radius: $border-radius;
+    transition: $trans-prim;
 
-  &:hover {
-    background: black;
-    color: white;
+    &:hover {
+      background: black;
+      color: white;
+    }
   }
 }
