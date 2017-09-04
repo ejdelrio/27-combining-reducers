@@ -21,7 +21,8 @@ class Dashboard extends React.Component {
         <Category
           formComplete={this.props.categoryCreate}
           formText='Add Category'
-          bodyText='Delete Category'
+          bodyText='X'
+          className='cat-parent'
           source={this.props.categories}
           childSource={this.props.expense}
           bodyComplete={this.props.categoryDelete}
@@ -29,6 +30,7 @@ class Dashboard extends React.Component {
         >
           <Category
             formComplete={this.props.expenseCreate}
+            className='cat-body'
             formText='Add Expense'
             bodyText='Delete'
             bodyComplete={this.props.expenseDelete}

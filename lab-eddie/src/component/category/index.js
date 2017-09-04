@@ -1,6 +1,7 @@
 import React from 'react';
-import CategoryBody from '../category-body'
-import CategoryForm from '../cat-form'
+import CategoryBody from '../category-body';
+import CategoryForm from '../cat-form';
+import './_category.scss';
 
 class Category extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Category extends React.Component {
     return(
       <span>
         <CategoryForm
+          className='cat-form'
           onComplete={this.props.formComplete}
           buttonText={this.props.formText}
           categoryID={this.props.categoryID}
@@ -29,8 +31,9 @@ class Category extends React.Component {
         <ul>
           {this.props.source.map(item => {
             return(
-              <li key={item.id}>
+              <li key={item.id} className={this.props.className}>
                 <CategoryBody
+                  className='cat-body'
                   buttonText={this.props.bodyText}
                   category={item}
                   categoryID={this.props.categoryID}

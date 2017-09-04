@@ -30,7 +30,7 @@ class CategoryForm extends React.Component {
   render() {
     let cat = this.props.category;
     return (
-      <form onSubmit={this.onSubmit} className='cat-form'>
+      <form onSubmit={this.onSubmit}>
         <input
           type='text'
           name='title'
