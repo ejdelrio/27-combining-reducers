@@ -3,18 +3,32 @@
 .cat-parent, .cat-body {
   float: left;
   margin-left: 25%;
+  margin-top: $gutter-sm;
   width: 50%;
   background: pink;
   border-radius: $border-radius;
   position: relative;
 
+  button {
+    margin-top: $gutter-sm;
+  }
+
   h3, p {
     float: left;
     width: 50%;
     margin-left: 25%;
+    margin-top: $gutter-sm;
     font-size: 4vh;
   }
-  
+
+  span>button {
+    float: right;
+    background: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 2%;
+  }
+
 }
 
 .cat-body {
