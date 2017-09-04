@@ -5,7 +5,7 @@
   margin-left: 25%;
   margin-top: $gutter-sm;
   width: 50%;
-  background: pink;
+  background: #80ABAA;
   border-radius: $border-radius;
   position: relative;
 
@@ -25,11 +25,13 @@
   }
 
   span>button {
-    float: right;
+    position: absolute;
+    right: 0;
     background: none;
     margin: 0;
     padding: 0;
-    margin-right: 2%;
+    margin: 2% 2%;
+
   }
   input, input[type="number"] {
     width: 80%;
@@ -49,15 +51,19 @@
   overflow-x: hidden;
   transition: 350ms all;
 
-  ul {
-    display: none;
+  ul,input, input[type=number], span>form>button {
+    position: absolute;
+    opacity: 0;
+    transition: 350ms position;
   }
 
   &:hover {
      height: 60vh;
      overflow-x: none;
-     ul {
-       display: block;
+
+     ul, input, input[type=number], span>form>button {
+       position: static;
+       opacity: 100;
      }
    }
 }
