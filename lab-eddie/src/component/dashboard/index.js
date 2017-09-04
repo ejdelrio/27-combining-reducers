@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
             formComplete={this.props.expenseCreate}
             className='cat-body'
             formText='Add Expense'
-            bodyText='Delete'
+            bodyText='X'
             bodyComplete={this.props.expenseDelete}
             secondForm={this.props.expenseUpdate}
           />
