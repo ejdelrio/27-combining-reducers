@@ -11,6 +11,12 @@ body {
   background: $primary;
 }
 
+main {
+  float: left;
+  width: 100%;
+  padding-bottom: 10vh;
+}
+
 button {
   border: none;
   color: white;

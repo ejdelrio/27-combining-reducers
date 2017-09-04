@@ -48,22 +48,29 @@
 
 .cat-parent {
   height: 15vh;
-  overflow-x: hidden;
+  overflow: auto;
   transition: 350ms all;
 
   ul,input, input[type=number], span>form>button {
-    position: absolute;
     opacity: 0;
-    transition: 350ms position;
+    position: absolute;
+    transition: 0ms all;
+    transition-delay: 350ms position;
+    transition-delay: 0ms opacity;
+
   }
 
   &:hover {
      height: 60vh;
-     overflow-x: none;
+     max-height: 1000vh;
+     transition: 350ms all;
+     transition-delay: 350ms all;
 
      ul, input, input[type=number], span>form>button {
-       position: static;
        opacity: 100;
+       position: static;
+       transition-delay: 350ms opacity;
+       transition: 350ms all;
      }
    }
 }
